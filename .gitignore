@@ -1,0 +1,5 @@
+__pycache__
+.secrets/secrets.yml
+.env
+.DS_Store
+.vscode

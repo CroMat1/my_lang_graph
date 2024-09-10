@@ -25,7 +25,7 @@ def vector_search(state: GraphState):
     result = neo4j_cv_vector_index.similarity_search_with_score(queries[0].sub_query, k=1)
     
     Document, score = result[0]
-    uri = re.search(r'uri:\s*(.+)', Document.page_content).group(1)
+    uri = re.search(r'cvUri:\s*(.+)', Document.page_content).group(1)
 
     return {"calculationView": uri, "question": question, "subqueries": queries}
 

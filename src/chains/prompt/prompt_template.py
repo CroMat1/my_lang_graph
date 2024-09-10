@@ -38,7 +38,10 @@ def create_few_shot_prompt_with_context(state: GraphState):
     Here is the schema information:
     {{schema}}. 
     Don't add any preambles, just return the correct cypher query
-      
+    
+    The correct cvUri to be used is {calculationView}
+    Using the information above create cypher statements and use that to query with the graph
+
     Below are a number of examples of questions and their corresponding Cypher queries.     
     """
 

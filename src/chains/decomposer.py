@@ -30,7 +30,7 @@ Here is example:
 Question: Give me the fields of Calculation View CVHB001.
 Answers:
 sub_query1 : Find calculation view CVHB001.
-sub_query2 : Return the fields of Calculation View CVHB001
+sub_query2 : Give me the fields of Calculation View CVHB001
 """
 prompt = ChatPromptTemplate.from_messages(
     [

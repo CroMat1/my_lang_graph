@@ -16,10 +16,10 @@ neo4j_cv_vector_index = Neo4jVector.from_existing_graph(
         url = NEO4J_URI,
         username = NEO4J_USERNAME,
         password = NEO4J_PASSWORD,
-        index_name = 'calcViewName2',
+        index_name = 'calcViewName',
         node_label = 'CalculationView',
-        text_node_properties = ['uri'],
-        embedding_node_property = 'cv_emb_ai02'
+        text_node_properties = ['name', 'package', 'cvUri'],
+        embedding_node_property = 'cv_embedding'
     )
 
 # switched to similarity

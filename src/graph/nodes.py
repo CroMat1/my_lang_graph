@@ -44,15 +44,16 @@ def prompt_template_with_context(state: GraphState):
 
 def cypher_qa_with_context(state: GraphState):
 
-    question = state["question"]
     queries = state["subqueries"]
+    prompt_with_context = state["prompt_with_context"]
 
     graph_qa_chain = get_graph_qa_chain_with_context(state)
 
     result = graph_qa_chain.invoke(
         {
             "query": queries[1].sub_query,
+
         },
     )
 
-    return {"result": result, "prompt_with_context":prompt_with_context, "subqueries": queries}
+    return {"result": result, "prompt_with_context": prompt_with_context, "subqueries": queries}

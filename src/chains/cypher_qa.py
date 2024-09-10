@@ -19,7 +19,7 @@ def get_graph_qa_chain_with_context(state: GraphState):
         return_direct=True,
         exclude_types = ["Session","Message","Chunk"],
         use_function_response=True,
-        function_response_system="Respond as gentlemen!",
+        function_response_system="Respond as Hana Calculation View Expert",
         )
         
     return graph_qa_chain

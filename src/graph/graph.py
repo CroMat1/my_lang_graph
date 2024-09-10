@@ -18,8 +18,6 @@ workflow.add_edge("VECTOR_SEARCH", "PROMPT_TEMPLATE_WITH_CONTEXT")
 workflow.add_edge("PROMPT_TEMPLATE_WITH_CONTEXT", "GRAPH_QA_WITH_CONTEXT")
 workflow.add_edge("GRAPH_QA_WITH_CONTEXT", END)
 
-workflow.add_edge("GRAPH_QA_WITH_CONTEXT", END)
-
 # # Set conditional entry point for vector search or graph qa
 # workflow.set_conditional_entry_point(
 #     route_question,

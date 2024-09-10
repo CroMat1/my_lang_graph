@@ -10,8 +10,8 @@ workflow = StateGraph(GraphState)
 # Nodes for graph qa with vector search
 workflow.add_node("DECOMPOSER", decomposer)
 workflow.add_node("VECTOR_SEARCH", vector_search)
-workflow.add_node(PROMPT_TEMPLATE_WITH_CONTEXT, prompt_template_with_context)
-workflow.add_node(GRAPH_QA_WITH_CONTEXT, graph_qa_with_context)
+workflow.add_node("PROMPT_TEMPLATE_WITH_CONTEXT", prompt_template_with_context)
+workflow.add_node("GRAPH_QA_WITH_CONTEXT", graph_qa_with_context)
 
 # Edges for graph qa with vector search
 workflow.add_edge(DECOMPOSER, VECTOR_SEARCH)

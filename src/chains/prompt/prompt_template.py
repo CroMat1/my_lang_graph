@@ -1,9 +1,11 @@
 from langchain_community.vectorstores import Neo4jVector
 from langchain_core.example_selectors import SemanticSimilarityExampleSelector
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 import os
 from langchain_core.prompts import FewShotPromptTemplate, PromptTemplate
+from src.chains.prompt.prompt_examples import examples
+from src.graph.state import GraphState
 
 load_dotenv(dotenv_path="config/.env")
 
@@ -15,9 +17,9 @@ example_selector = SemanticSimilarityExampleSelector.from_examples(
     examples,
     HuggingFaceEmbeddings(),
     Neo4jVector,
-    url = neo4j_url,
-    username = neo4j_user,
-    password = neo4j_password,
+    url = NEO4J_URI,
+    username = NEO4J_USERNAME,
+    password = NEO4J_PASSWORD,
     k=3,
     input_keys=["question"],
 )

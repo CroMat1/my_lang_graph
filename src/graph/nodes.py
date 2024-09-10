@@ -1,6 +1,9 @@
 from src.chains.decomposer import query_analyzer
-from src.chains.vector_graph_chain import get_vector_graph_chain
+from src.chains.vector_graph_chain import neo4j_cv_vector_index
 from src.chains.cypher_qa import get_graph_qa_chain_with_context
+from src.chains.prompt.prompt_template import create_few_shot_prompt_with_context
+from src.graph.state import GraphState
+import re
 
 def decomposer(state: GraphState):
     
@@ -9,7 +12,7 @@ def decomposer(state: GraphState):
     
     question = state["question"]
     subqueries = query_analyzer.invoke(question)
-    return {"subqueries": subqueries, "question":question}
+    return {"subqueries": subqueries, "question": question}
 
 def vector_search(state: GraphState):
     

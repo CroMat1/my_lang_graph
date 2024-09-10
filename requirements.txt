@@ -5,3 +5,4 @@ pydantic
 langgraph
 langchain_community
 langchain-openai
+langchain-huggingface

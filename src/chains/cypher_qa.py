@@ -1,9 +1,7 @@
 from langchain.chains import GraphCypherQAChain
 from src.conn.llm import llm
 from src.conn.neo4jGraph import Neo4jGraph
-
-from langchain.chains import GraphCypherQAChain
-from src.agent.prompt import prompt_template
+from src.graph.state import GraphState
 
 def get_graph_qa_chain_with_context(state: GraphState):
     
@@ -23,4 +21,5 @@ def get_graph_qa_chain_with_context(state: GraphState):
         use_function_response=True,
         function_response_system="Respond as gentlemen!",
         )
+        
     return graph_qa_chain
